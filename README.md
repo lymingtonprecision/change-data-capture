@@ -34,15 +34,23 @@ task.
 
 There are two primary services:
 
-* [`cdc-init`](cdc-init/)
+* [`cdc-init`]
 
   Is responsible for initializing Change Data capture on database
   tables, creating the queues and topics for message publication, and
   seeding the Kafka topics with initial record collections.
-* [`cdc-publisher`](cdc-publisher/)
+* [`cdc-publisher`]
 
   Is responsible for the ongoing publication of change messages from
   the database to Kafka.
+
+There is also a shared [utility library][`cdc-util`] that is used by
+both services and provides the data schema and various common
+functions.
+
+[`cdc-util`]: https://github.com/lymingtonprecision/cdc-util
+[`cdc-init`]: https://github.com/lymingtonprecision/cdc-init
+[`cdc-publisher`]: https://github.com/lymingtonprecision/cdc-publisher
 
 ## Control/Configuration
 
